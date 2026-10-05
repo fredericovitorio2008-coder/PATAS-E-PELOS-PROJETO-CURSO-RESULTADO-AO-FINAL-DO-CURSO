@@ -1,4 +1,8 @@
-
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
 body {
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -39,8 +43,61 @@ body {
     display: flex;
     justify-content: center;
     
-    padding-left: 300px; /* Centraliza o formulário de busca horizontalmente (distancia do lado esquerdo) (distancia do título) */
-    gap: 10px; /* Se tiver um input e um botão de busca, cria espaço entre eles */
+    padding-left: 250px; /* Centraliza o formulário de busca horizontalmente (distancia do lado esquerdo) (distancia do título) */
+    gap: 10px; 
+}
+
+.buscar-form input[type="text"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 200px; /* Largura do campo de busca */
+}
+
+.buscar-form button {
+    padding: 8px 12px;
+    background-color: #234aa0;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.buscar-form button:hover {
+    background-color: #1a357a; /* Cor ao passar o mouse */
+}
+
+.buscar-form button:active {
+    background-color: #0d1f4c; /* Cor ao clicar */
+}
+
+.buscar-form button:focus {
+    outline: none; /* Remove a borda de foco padrão */
+    box-shadow: 0 0 5px #234aa0; /* Adiciona um efeito de sombra ao redor do botão */
+}
+
+.buscar-form input[type="text"]:focus {
+    outline: none; /* Remove a borda de foco padrão */
+    box-shadow: 0 0 5px #234aa0; /* Adiciona um efeito de sombra ao redor do campo de busca */
+}
+
+.buscar-form input[type="text"]::placeholder {
+    color: #999; /* Cor do texto do placeholder */
+    font-style: italic; /* Estilo do texto do placeholder */
+}   
+
+.buscar-form button::after {
+    content: '🔍'; /* Adiciona o ícone de lupa */
+    margin-left: 5px; /* Espaçamento entre o texto e o ícone */
+}
+
+.buscar-form button::before {
+    content: ''; /* Adiciona um espaço antes do botão */
+    margin-right: 5px; /* Espaçamento entre o ícone e o texto */
+}
+
+.buscar-form button span {
+    display: none; /* Oculta o texto do botão */
 }
 
 .cadastrar-form {
@@ -51,6 +108,77 @@ body {
     margin: 30px auto; /* Centraliza o formulário na tela */
     padding: 25px;
     gap: 15px; /* Cria um espaço uniforme entre cada campo/input do formulário */
-    padding-left: 600px; /* Centraliza o formulário de cadastro horizontalmente (distancia da barra de pesquisa) */
+    padding-left: 280px; /* Centraliza o formulário de cadastro horizontalmente (distancia da barra de pesquisa) */
 }
+
+.menu {
+    list-style: none;
+    padding: 0;
+    margin-left: 360px; /* Distancia do lado esquerdo da tela */
+    
+    display: flex;
+    width: 30px;
+    font-family: Arial, sans-serif;
+}
+
+/* Itens principais do menu */
+.menu > li {
+    position: relative;
+    
+    
+}
+
+/* Links do menu */
+.menu a {
+    display: block;
+    color: rgb(248, 244, 244);
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
+    align-items: center;
+    background-color: #234aa0;
+    margin: 20px;
+
+}
+
+/* Efeito ao passar o mouse nos links principais */
+.menu > li > a:hover {
+    background-color: #111;
+}
+
+/* --- ESTILO DO DROPDOWN --- */
+
+/* Esconde o submenu por padrão */
+.menu .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%; /* Posiciona logo abaixo do item "Rações" */
+    left: 0;
+    background-color: #08acdf;
+    min-width: 160px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Estilo dos itens dentro do submenu */
+.menu .dropdown-content li a {
+    padding: 10px 16px;
+    text-align: left;
+}
+
+/* Cor de fundo ao passar o mouse nos itens do submenu */
+.menu .dropdown-content li a:hover {
+    background-color: #555;
+}
+
+/* Mostra o submenu quando o mouse passa por cima da categoria "Rações" */
+.menu .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+
 
