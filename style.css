@@ -22,7 +22,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #234aa0;
+    background-color: #7a9be2;
     padding: 20px;
     gap: 20px; /* Cria um espaço perfeito e controlado entre a imagem e o título */
 }
@@ -30,7 +30,6 @@ body {
 .logo img {
     width: 140px;
     height: auto;
-    
 }
 
 .logo h1 {
@@ -42,8 +41,9 @@ body {
 .buscar-form {
     display: flex;
     justify-content: center;
-    
-    padding-left: 250px; /* Centraliza o formulário de busca horizontalmente (distancia do lado esquerdo) (distancia do título) */
+    margin-top: 20px; /* Distancia do título */
+    margin-bottom: 20px; /* Distancia do formulário de busca para o menu */
+    align-items: center; /* Centraliza o formulário de busca horizontalmente (distancia do lado esquerdo) (distancia do título) */
     gap: 10px; 
 }
 
@@ -51,13 +51,16 @@ body {
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    width: 200px; /* Largura do campo de busca */
+    width: 400px; /* Largura do campo de busca */
 }
 
 .buscar-form button {
     padding: 8px 12px;
-    background-color: #234aa0;
-    color: white;
+    background-color: #e8ebf1;
+    font-weight: bold;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    color: rgb(54, 18, 211);
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -102,13 +105,17 @@ body {
 
 .cadastrar-form {
     display: flex;
-    flex-direction: column; 
-    align-items: stretch; 
-    max-width: 450px; 
-    margin: 30px auto; /* Centraliza o formulário na tela */
-    padding: 25px;
-    gap: 15px; /* Cria um espaço uniforme entre cada campo/input do formulário */
-    padding-left: 280px; /* Centraliza o formulário de cadastro horizontalmente (distancia da barra de pesquisa) */
+    flex-direction: column;
+    align-items: stretch;
+    max-width: 200px;
+    width: 100%;
+    margin: 30px auto; /* Centraliza perfeitamente o formulário na tela */
+    padding: 40px;
+    background-color: #7a9be2;
+    color: #ffffff;
+    gap: 18px; /* Espaçamento uniforme e agradável entre os campos */
+    border-radius: 14px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2); /* Sombra elegante para dar profundidade */
 }
 
 .menu {
@@ -132,12 +139,15 @@ body {
 .menu a {
     display: block;
     color: rgb(248, 244, 244);
+    font-weight: bold;
+    font-size: 16px;
     padding: 14px 20px;
     text-decoration: none;
     text-align: center;
     align-items: center;
     background-color: #234aa0;
     margin: 20px;
+    border-radius: 14px;
 
 }
 
@@ -155,6 +165,7 @@ body {
     top: 100%; /* Posiciona logo abaixo do item "Rações" */
     left: 0;
     background-color: #08acdf;
+    border-radius: 14px;
     min-width: 160px;
     list-style: none;
     padding: 0;
