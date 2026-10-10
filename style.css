@@ -28,6 +28,7 @@ body {
 }
 
 .logo img {
+    margin-left: 500px;
     width: 140px;
     height: auto;
 }
@@ -104,18 +105,16 @@ body {
 }
 
 .cadastrar-form {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    max-width: 200px;
-    width: 100%;
-    margin: 30px auto; /* Centraliza perfeitamente o formulário na tela */
-    padding: 40px;
-    background-color: #7a9be2;
-    color: #ffffff;
-    gap: 18px; /* Espaçamento uniforme e agradável entre os campos */
-    border-radius: 14px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2); /* Sombra elegante para dar profundidade */
+    margin-left: 500px; /* Distancia do lado esquerdo da tela */
+    padding: 8px 12px;
+    background-color: #e8ebf1;
+    font-weight: bold;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    color: rgb(54, 18, 211);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
 .menu {
