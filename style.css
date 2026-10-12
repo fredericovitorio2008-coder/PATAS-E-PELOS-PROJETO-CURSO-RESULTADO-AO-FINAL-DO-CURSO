@@ -5,191 +5,299 @@
 }
 
 body {
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    background-image: url(img/Fundo\ Site\ Patas\ e\ Pelos.png);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-image: url('img/Fundo Site Patas e Pelos.png');
     background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #333333;
+    line-height: 1.6;
 }
 
+/* ==========================================
+   2. CABEÇALHO E LOGO
+   ========================================== */
 .navbar {
-    padding: 10px;
-    top: 0;
-    left: 0;
     width: 100%;
-    
+    background-color: #7a9be2;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #7a9be2;
     padding: 20px;
-    gap: 20px; /* Cria um espaço perfeito e controlado entre a imagem e o título */
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .logo img {
-    margin-left: 500px;
-    width: 140px;
+    width: 120px;
     height: auto;
 }
 
 .logo h1 {
-    font-size: 60px; 
+    font-size: 3rem; 
     color: #ffffff;
     margin: 0;
-}
-
-
-.buscar-form {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px; /* Distancia do título */
-    margin-bottom: 20px; /* Distancia do formulário de busca para o menu */
-    align-items: center; /* Centraliza o formulário de busca horizontalmente (distancia do lado esquerdo) (distancia do título) */
-    gap: 10px; 
-}
-
-.buscar-form input[type="text"] {
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    width: 400px; /* Largura do campo de busca */
-}
-
-.buscar-form button {
-    padding: 8px 12px;
-    background-color: #e8ebf1;
-    font-weight: bold;
-    font-size: 16px;
-    font-family: Arial, sans-serif;
-    color: rgb(54, 18, 211);
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.buscar-form button:hover {
-    background-color: #1a357a; /* Cor ao passar o mouse */
-}
-
-.buscar-form button:active {
-    background-color: #0d1f4c; /* Cor ao clicar */
-}
-
-.buscar-form button:focus {
-    outline: none; /* Remove a borda de foco padrão */
-    box-shadow: 0 0 5px #234aa0; /* Adiciona um efeito de sombra ao redor do botão */
-}
-
-.buscar-form input[type="text"]:focus {
-    outline: none; /* Remove a borda de foco padrão */
-    box-shadow: 0 0 5px #234aa0; /* Adiciona um efeito de sombra ao redor do campo de busca */
-}
-
-.buscar-form input[type="text"]::placeholder {
-    color: #999; /* Cor do texto do placeholder */
-    font-style: italic; /* Estilo do texto do placeholder */
-}   
-
-.buscar-form button::after {
-    content: '🔍'; /* Adiciona o ícone de lupa */
-    margin-left: 5px; /* Espaçamento entre o texto e o ícone */
-}
-
-.buscar-form button::before {
-    content: ''; /* Adiciona um espaço antes do botão */
-    margin-right: 5px; /* Espaçamento entre o ícone e o texto */
-}
-
-.buscar-form button span {
-    display: none; /* Oculta o texto do botão */
+    text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .cadastrar-form {
-    margin-left: 500px; /* Distancia do lado esquerdo da tela */
-    padding: 8px 12px;
-    background-color: #e8ebf1;
+    padding: 10px 20px;
+    background-color: #ffffff;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 15px;
     font-family: Arial, sans-serif;
     color: rgb(54, 18, 211);
-    border: none;
-    border-radius: 4px;
+    border: 2px solid #234aa0;
+    border-radius: 8px;
     cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
 }
 
+.cadastrar-form:hover {
+    background-color: #234aa0;
+    color: #ffffff;
+}
+
+/* ==========================================
+   3. MENU DE NAVEGAÇÃO E DROPDOWN
+   ========================================== */
 .menu {
     list-style: none;
     padding: 0;
-    margin-left: 360px; /* Distancia do lado esquerdo da tela */
-    
+    margin: 15px auto;
     display: flex;
-    width: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
     font-family: Arial, sans-serif;
 }
 
-/* Itens principais do menu */
 .menu > li {
     position: relative;
-    
-    
 }
 
-/* Links do menu */
 .menu a {
     display: block;
     color: rgb(248, 244, 244);
     font-weight: bold;
-    font-size: 16px;
-    padding: 14px 20px;
+    font-size: 15px;
+    padding: 12px 18px;
     text-decoration: none;
-    text-align: center;
-    align-items: center;
     background-color: #234aa0;
-    margin: 20px;
-    border-radius: 14px;
-
+    margin: 5px;
+    border-radius: 10px;
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
-/* Efeito ao passar o mouse nos links principais */
 .menu > li > a:hover {
     background-color: #111;
+    transform: translateY(-2px);
 }
 
-/* --- ESTILO DO DROPDOWN --- */
-
-/* Esconde o submenu por padrão */
+/* Submenu Dropdown */
 .menu .dropdown-content {
     display: none;
     position: absolute;
-    top: 100%; /* Posiciona logo abaixo do item "Rações" */
+    top: 100%;
     left: 0;
     background-color: #08acdf;
-    border-radius: 14px;
+    border-radius: 10px;
     min-width: 160px;
     list-style: none;
-    padding: 0;
+    padding: 5px 0;
     margin: 0;
     box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-    z-index: 1;
+    z-index: 10;
 }
 
-/* Estilo dos itens dentro do submenu */
 .menu .dropdown-content li a {
-    padding: 10px 16px;
+    padding: 10px 15px;
     text-align: left;
+    background-color: transparent;
+    margin: 0;
+    border-radius: 0;
 }
 
-/* Cor de fundo ao passar o mouse nos itens do submenu */
 .menu .dropdown-content li a:hover {
     background-color: #555;
+    transform: none;
 }
 
-/* Mostra o submenu quando o mouse passa por cima da categoria "Rações" */
 .menu .dropdown:hover .dropdown-content {
     display: block;
 }
 
+/* ==========================================
+   4. BARRA DE PESQUISA
+   ========================================== */
+.buscar-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    gap: 10px;
+    max-width: 600px;
+    padding: 0 15px;
+}
+
+.buscar-form .form-label {
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.buscar-form input[type="search"] {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 100%;
+    max-width: 350px;
+    font-size: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.buscar-form button {
+    padding: 10px 18px;
+    background-color: #e8ebf1;
+    font-weight: bold;
+    font-size: 15px;
+    font-family: Arial, sans-serif;
+    color: rgb(54, 18, 211);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.buscar-form button:hover {
+    background-color: #1a357a;
+    color: #ffffff;
+}
+
+.buscar-form input[type="search"]:focus,
+.buscar-form button:focus {
+    outline: none;
+    box-shadow: 0 0 8px #234aa0;
+}
+
+.buscar-form input[type="search"]::placeholder {
+    color: #2b01c5;
+    font-style: italic;
+}
+
+
+.text {
+    text-align: center;
+    color: #0c2a31;
+    margin: 20px 0;
+    text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.main-content {
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.92);
+    border-radius: 12px;
+    margin: 20px auto 40px auto;
+    max-width: 1100px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    border: 1px solid #fc5e03;
+}
+
+.main-content h2 {
+    color: #234aa0;
+    margin-bottom: 10px;
+    font-size: 26px;
+}
+
+.main-content h3 {
+    color: #1a357a;
+    margin-top: 25px;
+    margin-bottom: 8px;
+    font-size: 22px;
+    border-bottom: 2px solid #7a9be2;
+    padding-bottom: 5px;
+}
+
+.main-content p {
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.vendas {
+    margin-top: 20px;
+}
+
+.card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.card-item, .card-service {
+    background-color: #ffffff;
+    border: 1px solid #0dc8e9;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    width: 230px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-item:hover, .card-service:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+}
+
+.card-item img, .card-service img {
+    max-width: 100%;
+    height: 140px;
+    object-fit: contain;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.card-item h4, .card-service h4 {
+    font-size: 15px;
+    color: #333;
+    margin: 8px 0;
+    flex-grow: 1;
+}
+
+.card-item p, .card-service p {
+    font-size: 16px;
+    font-weight: bold;
+    color: #234aa0;
+    margin: 5px 0 0 0;
+}
+
+
+footer {
+    text-align: center;
+    background-color: #234aa0;
+    color: #ffffff;
+    padding: 25px;
+    margin-top: 40px;
+    box-shadow: 0 -4px 10px rgba(0,0,0,0.1);
+}
+
+footer h2 {
+    margin-bottom: 8px;
+    font-size: 22px;
+}
+
+footer p {
+    color: #ffffff;
+}
 
 
 
